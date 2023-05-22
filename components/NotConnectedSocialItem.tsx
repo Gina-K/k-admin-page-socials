@@ -4,7 +4,7 @@ type Props = {
     social: AvailableSocialConnection;
 }
 
-export const SocialConnectionsItem = ({social}: Props) => {
+export const NotConnectedSocialItem = ({social}: Props) => {
     return (
         <li>
             <span>{social.name}</span>

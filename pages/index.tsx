@@ -1,15 +1,22 @@
 import {AVAILABLE_SOCIALS} from '@/pages/constants';
-import {SocialConnectionsItem} from '@/components/SocialConnectionsItem';
+import {NotConnectedSocialItem} from '@/components/NotConnectedSocialItem';
+import {useConnectedSocials} from '@/hooks/useConnectedSocials';
+import {ConnectedSocialItem} from '@/components/ConnectedSocialItem';
 
 const Home = () => {
-    const socialConnectionsList = AVAILABLE_SOCIALS.map((social) => (
-        <SocialConnectionsItem key={social.id} social={social} />));
+    const {connectedSocials} = useConnectedSocials();
+
+    const notConnectedSocialList = AVAILABLE_SOCIALS.map((social) => (
+        social.isConnected || <NotConnectedSocialItem key={social.id} social={social} />));
+
+    const connectedSocialsList = connectedSocials && connectedSocials.map((connection) => <ConnectedSocialItem key={connection.id} social={connection} />);
 
     return (
         <>
             <h2>Social Network Connections</h2>
             <ul>
-                {socialConnectionsList}
+                {connectedSocialsList}
+                {notConnectedSocialList}
             </ul>
         </>
     );

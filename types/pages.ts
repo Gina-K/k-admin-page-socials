@@ -1,6 +1,6 @@
 export interface UsersConnectedSocialsList extends Array<UsersConnectedSocial>{}
 
-interface UsersConnectedSocial {
+export interface UsersConnectedSocial {
     id: string;
     socialName: string;
     accountName: string;

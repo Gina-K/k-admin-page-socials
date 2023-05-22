@@ -1,5 +1,6 @@
 import type {UsersConnectedSocial} from '@/types/pages';
 import {useState} from 'react';
+import {dateNow, updateSocialData} from '@/utils';
 
 type Props = {
     connection: UsersConnectedSocial;
@@ -9,6 +10,11 @@ type Props = {
 
 export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: Props) => {
     const [isEditing, setIsEditing] = useState(false);
+
+    const handleSave = () => {
+        setIsEditing(false);
+        updateSocialData({...connection, modified: dateNow});
+    }
 
     let editableDetails;
 
@@ -34,7 +40,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                         });
                     }}
                 />
-                <button onClick={() => setIsEditing(false)}>
+                <button onClick={handleSave}>
                     Save
                 </button>
             </>

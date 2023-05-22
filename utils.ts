@@ -15,3 +15,9 @@ export const updateSocialData = (connection) => {
 }
 
 export const dateNow = new Date().toLocaleDateString("en-GB", {day: "2-digit", month: "long", year: "numeric"});
+
+export const getSocialNameFromAddressBar = () => {
+    let path = window.location.pathname;
+    let socialName = path.substr(path.lastIndexOf("/") + 1);
+    return socialName;
+}

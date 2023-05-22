@@ -1,6 +1,7 @@
 import type {UsersConnectedSocial} from '@/types/pages';
 import {useState} from 'react';
 import {dateNow, updateSocialData} from '@/utils';
+import Link from 'next/link';
 
 type Props = {
     connection: UsersConnectedSocial;
@@ -63,6 +64,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
             <p>{connection.socialName}</p>
             <p>{connection.accountName}</p>
             <p>Connected: {connection.connectionDate}</p>
+            <Link href={`/connections/${connection.socialName}`}>Content Manager</Link>
             <button onClick={() => alert('Social connections was not implemented')}>
                 Disconnect
             </button>

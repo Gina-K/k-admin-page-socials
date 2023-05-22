@@ -4,10 +4,10 @@ import {ConnectedSocialItem} from '@/components/ConnectedSocialItem';
 type Props = {
     connections: UsersConnectedSocialsList;
     onChangeName: ({}) => void;
-    onChangeDescription: ({}) => void;
+    onChangeNotes: ({}) => void;
 };
 
-export const ConnectedSocialsList = ({connections, onChangeName, onChangeDescription}: Props) => {
+export const ConnectedSocialsList = ({connections, onChangeName, onChangeNotes}: Props) => {
     return (
         <ul>
             {connections.map((connection) => (
@@ -15,7 +15,7 @@ export const ConnectedSocialsList = ({connections, onChangeName, onChangeDescrip
                     <ConnectedSocialItem
                         connection={connection}
                         onChangeName={onChangeName}
-                        onChangeDescription={onChangeDescription}
+                        onChangeNotes={onChangeNotes}
                     />
                 </li>
             ))}

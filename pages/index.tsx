@@ -1,6 +1,6 @@
 import {useConnectedSocials} from '@/hooks/useConnectedSocials';
 import {NotConnectedSocialsList} from '@/components/NotConnectedSocialsList';
-import {ConnectedSocialsList} from '@/components/ConnectedSocialsList';
+import {ConnectedSocialsWrapper} from '@/components/ConnectedSocialsWrapper';
 
 const Home = () => {
     const {connectedSocials} = useConnectedSocials();
@@ -8,11 +8,7 @@ const Home = () => {
     return (
         <>
             <h2>Social Network Connections</h2>
-            <ConnectedSocialsList
-                connections={connectedSocials}
-                onChangeName={() => console.log('changed name')}
-                onChangeDescription={() => console.log('changed description')}
-            />
+            {connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
             <NotConnectedSocialsList />
         </>
     );

@@ -4,10 +4,10 @@ import {useState} from 'react';
 type Props = {
     connection: UsersConnectedSocial;
     onChangeName: ({}) => void;
-    onChangeDescription: ({}) => void;
+    onChangeNotes: ({}) => void;
 }
 
-export const ConnectedSocialItem = ({connection, onChangeName, onChangeDescription}: Props) => {
+export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: Props) => {
     const [isEditing, setIsEditing] = useState(false);
 
     let editableDetails;
@@ -28,7 +28,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeDescripti
                     placeholder="Notes"
                     value={connection.notes}
                     onChange={e => {
-                        onChangeDescription({
+                        onChangeNotes({
                             ...connection,
                             notes: e.target.value
                         });

@@ -1,18 +1,18 @@
 import {useConnectedSocials} from '@/hooks/useConnectedSocials';
-import {ConnectedSocialItem} from '@/components/ConnectedSocialItem';
 import {NotConnectedSocialsList} from '@/components/NotConnectedSocialsList';
+import {ConnectedSocialsList} from '@/components/ConnectedSocialsList';
 
 const Home = () => {
     const {connectedSocials} = useConnectedSocials();
 
-    const connectedSocialsList = connectedSocials && connectedSocials.map((connection) => <ConnectedSocialItem key={connection.id} social={connection} />);
-
     return (
         <>
             <h2>Social Network Connections</h2>
-            <ul>
-                {connectedSocialsList}
-            </ul>
+            <ConnectedSocialsList
+                connections={connectedSocials}
+                onChangeName={() => console.log('changed name')}
+                onChangeDescription={() => console.log('changed description')}
+            />
             <NotConnectedSocialsList />
         </>
     );

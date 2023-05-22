@@ -8,7 +8,9 @@ export const NotConnectedSocialItem = ({social}: Props) => {
     return (
         <li>
             <span>{social.name}</span>
-            <input type="button" value={social.isConnected ? "Disconnect" : "Connect"} />
+            <button onClick={() => alert('Social connections was not implemented')}>
+                Connect
+            </button>
         </li>
 
     );

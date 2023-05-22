@@ -1,0 +1,16 @@
+{
+  "user123": {
+    "socials": [
+      {
+        "id": "1",
+        "socialName": "Instagram",
+        "accountName": "patrickstart01",
+        "connectionDate": "14.12.2022",
+        "accountUrl": "https://www.instagram.com/patrickstart01/",
+        "modified": "",
+        "displayName": "patrickstart01 on Instagram",
+        "notes": ""
+      }
+    ]
+  }
+}

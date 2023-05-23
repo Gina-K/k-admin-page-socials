@@ -1,4 +1,6 @@
 import {ReactNode} from 'react';
+import {ConnectButton} from '@/components/UI/ConnectButton';
+import {DisconnectButton} from '@/components/UI/DisconnectButton';
 
 type Props = {
     socialName: string;
@@ -7,13 +9,11 @@ type Props = {
 
 export const SocialCard = ({children, socialName}: Props) => {
     return (
-        <section className="border-2">
+        <section className="flex flex-col justify-between overflow-hidden border rounded-md hover:shadow">
             <header>{socialName} Logo</header>
             {children}
             <footer>
-                <button onClick={() => alert('Social connections was not implemented')}>
-                    {children ? 'Disconnect 💔' : 'Conect'}
-                </button>
+                {children ? <DisconnectButton /> : <ConnectButton />}
             </footer>
         </section>
     );

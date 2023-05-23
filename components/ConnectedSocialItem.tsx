@@ -30,6 +30,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                     <input
                         value={connection.displayName}
                         maxLength={25}
+                        className="appearance-none border rounded w-full py-1 px-1 font-normal leading-none focus:outline-none focus:shadow-outline focus:border-indigo-500"
                         onChange={e => {
                             onChangeName({
                                 ...connection,
@@ -41,6 +42,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                         placeholder="Notes"
                         value={connection.notes}
                         maxLength={150}
+                        className="appearance-none border rounded w-full py-1 px-1 italic leading-none focus:outline-none focus:shadow-outline focus:border-indigo-500"
                         onChange={e => {
                             onChangeNotes({
                                 ...connection,

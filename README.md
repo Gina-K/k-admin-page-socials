@@ -39,3 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 NOTES
 1. json-server: simple solution for mocking API. Should be moved to dev dependencies.
+2. fontawesome: handy icon library with plenty of free resources

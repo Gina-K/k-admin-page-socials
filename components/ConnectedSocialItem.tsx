@@ -3,6 +3,9 @@ import {useState} from 'react';
 import {dateNow, updateSocialData} from '@/utils';
 import Link from 'next/link';
 import {EditableDetails} from '@/components/UI/EditableDetails';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFloppyDisk, faPenToSquare} from '@fortawesome/free-solid-svg-icons';
+import {RoundIconButton} from '@/components/UI/RoundIconButton';
 
 type Props = {
     connection: UsersConnectedSocial;
@@ -46,12 +49,12 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                         }}
                     />
                 </div>
-                <button
+                <RoundIconButton
                     onClick={handleSave}
-                    className="self-start justify-self-end"
+                    title="Save changes"
                 >
-                    Save
-                </button>
+                    <FontAwesomeIcon icon={faFloppyDisk} />
+                </RoundIconButton>
             </EditableDetails>
         );
     } else {
@@ -61,12 +64,12 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                     <p className="font-normal">{connection.displayName}</p>
                     <p className="italic">{connection.notes}</p>
                 </div>
-                <button
+                <RoundIconButton
                     onClick={() => setIsEditing(true)}
-                    className="self-start justify-self-end"
+                    title="Edit Title and add Notes"
                 >
-                    Edit
-                </button>
+                    <FontAwesomeIcon icon={faPenToSquare} />
+                </RoundIconButton>
             </EditableDetails>
         )
         ;
@@ -74,7 +77,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
 
     return (
         <div
-            className='grow border m-2 text-sm font-extralight'
+            className='grow m-2 text-sm font-extralight'
         >
             {editableDetails}
             <p>Username: {connection.accountName}</p>

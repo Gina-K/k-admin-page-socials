@@ -10,9 +10,9 @@ type Props = {
 
 export const SocialCard = ({children, socialName}: Props) => {
     return (
-        <section className="basis-60 flex flex-col justify-between overflow-hidden border rounded-md m-3 hover:shadow">
-            <header className="w-full h-12">
-                <div className="w-full h-8 mx-auto mt-3 relative">
+        <section className="basis-64 flex flex-col justify-between min-h-[16rem] overflow-hidden border rounded-md m-3 hover:shadow">
+            <header className="w-full h-12 m-auto">
+                <div className="w-full h-8 mt-3 relative">
                     <Image src={`/logos/${socialName}Logo.png`} alt={`${socialName} logo`} fill className="object-contain"/>
                 </div>
             </header>

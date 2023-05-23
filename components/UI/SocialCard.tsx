@@ -1,6 +1,7 @@
 import {ReactNode} from 'react';
 import {ConnectButton} from '@/components/UI/ConnectButton';
 import {DisconnectButton} from '@/components/UI/DisconnectButton';
+import Image from 'next/image';
 
 type Props = {
     socialName: string;
@@ -10,7 +11,11 @@ type Props = {
 export const SocialCard = ({children, socialName}: Props) => {
     return (
         <section className="flex flex-col justify-between overflow-hidden border rounded-md hover:shadow">
-            <header>{socialName} Logo</header>
+            <header className="w-full h-12">
+                <div className="w-full h-8 mx-auto mt-3 relative">
+                    <Image src={`/logos/${socialName}Logo.png`} alt={`${socialName} logo`} fill className="object-contain"/>
+                </div>
+            </header>
             {children}
             <footer>
                 {children ? <DisconnectButton /> : <ConnectButton />}

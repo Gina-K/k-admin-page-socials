@@ -1,11 +1,11 @@
 import {AVAILABLE_SOCIALS} from '@/pages/constants';
-import {NotConnectedSocialItem} from '@/components/NotConnectedSocialItem';
+import {SocialCard} from '@/components/UI/SocialCard';
 
 export const NotConnectedSocialsList = () => {
     return (
-        <ul>
+        <>
             {AVAILABLE_SOCIALS.map((social) => (social.isConnected ||
-                <NotConnectedSocialItem key={social.id} social={social} />))}
-        </ul>
+                <SocialCard key={social.id} socialName={social.name} />))}
+        </>
     );
 }

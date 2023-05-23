@@ -8,8 +8,10 @@ const Home = () => {
     return (
         <>
             <h2>Social Network Connections</h2>
-            {connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
-            <NotConnectedSocialsList />
+            <div className="grid grid-flow-col grid-cols-3 gap-4 auto-cols-max">
+                {connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
+                <NotConnectedSocialsList />
+            </div>
         </>
     );
 }

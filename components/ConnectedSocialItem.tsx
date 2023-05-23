@@ -65,9 +65,6 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
             <p>{connection.accountName}</p>
             <p>Connected: {connection.connectionDate}</p>
             <Link href={`/connections/${connection.socialName}`}>Content Manager</Link>
-            <button onClick={() => alert('Social connections was not implemented')}>
-                Disconnect
-            </button>
         </>
 
     );

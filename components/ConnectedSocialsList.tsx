@@ -1,5 +1,6 @@
 import type {UsersConnectedSocialsList} from '@/types/pages';
 import {ConnectedSocialItem} from '@/components/ConnectedSocialItem';
+import {SocialCard} from '@/components/UI/SocialCard';
 
 type Props = {
     connections: UsersConnectedSocialsList;
@@ -9,16 +10,16 @@ type Props = {
 
 export const ConnectedSocialsList = ({connections, onChangeName, onChangeNotes}: Props) => {
     return (
-        <ul>
+        <>
             {connections.map((connection) => (
-                <li key={connection.id}>
+                <SocialCard key={connection.id} socialName={connection.socialName}>
                     <ConnectedSocialItem
                         connection={connection}
                         onChangeName={onChangeName}
                         onChangeNotes={onChangeNotes}
                     />
-                </li>
+                </SocialCard>
             ))}
-        </ul>
+        </>
     );
 };

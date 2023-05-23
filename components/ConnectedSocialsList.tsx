@@ -1,11 +1,11 @@
-import type {UsersConnectedSocialsList} from '@/types/pages';
+import type {UsersConnectedSocial, UsersConnectedSocialsList} from '@/types/general';
 import {ConnectedSocialItem} from '@/components/ConnectedSocialItem';
 import {SocialCard} from '@/components/UI/SocialCard';
 
 type Props = {
     connections: UsersConnectedSocialsList;
-    onChangeName: ({}) => void;
-    onChangeNotes: ({}) => void;
+    onChangeName: (connection: UsersConnectedSocial) => void;
+    onChangeNotes: (connection: UsersConnectedSocial) => void;
 };
 
 export const ConnectedSocialsList = ({connections, onChangeName, onChangeNotes}: Props) => {

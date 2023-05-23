@@ -82,7 +82,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
             className='grow m-2 flex flex-col text-sm font-extralight'
         >
             {editableDetails}
-            <div className="grow">
+            <div className="">
                 <p>Username: {connection.accountName}</p>
                 <p>Connected: {connection.connectionDate}</p>
             </div>

@@ -79,12 +79,23 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
 
     return (
         <div
-            className='grow m-2 text-sm font-extralight'
+            className='grow m-2 flex flex-col text-sm font-extralight'
         >
             {editableDetails}
-            <p>Username: {connection.accountName}</p>
-            <p>Connected: {connection.connectionDate}</p>
-            <Link href={`/connections/${connection.socialName}`}>Content Manager</Link>
+            <div className="grow">
+                <p>Username: {connection.accountName}</p>
+                <p>Connected: {connection.connectionDate}</p>
+            </div>
+            <Link href={`/connections/${connection.socialName}`}
+                  className="self-center"
+            >
+                <button
+                    className="items-end py-2 px-4 mb-2 mt-4 font-normal rounded-full bg-gradient-to-r from-indigo-500 to-indigo-600
+                    hover:from-indigo-400 hover:to-indigo-500 text-white"
+                >
+                    Manage content
+                </button>
+            </Link>
         </div>
 
     );

@@ -5,7 +5,6 @@ import {faFloppyDisk, faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 
 import type {UsersConnectedSocial} from '@/types/general';
 import {dateNow, updateSocialData} from '@/utils';
-import {EditableDetails} from '@/components/UI/EditableDetails';
 import {RoundIconButton} from '@/components/UI/RoundIconButton';
 
 type Props = {
@@ -13,7 +12,7 @@ type Props = {
     onChange: (connection: UsersConnectedSocial) => void;
 }
 
-export const ConnectedSocialItem = ({connection, onChange}: Props) => {
+export const ConnectedSocialDetails = ({connection, onChange}: Props) => {
     const [isEditing, setIsEditing] = useState<boolean>(false);
 
     const handleSave = () => {
@@ -25,7 +24,7 @@ export const ConnectedSocialItem = ({connection, onChange}: Props) => {
 
     if (isEditing) {
         editableDetails = (
-            <EditableDetails>
+            <div className="flex flex-row mb-2 text-black grow">
                 <div className="grow">
                     <input
                         value={connection.displayName}
@@ -59,11 +58,11 @@ export const ConnectedSocialItem = ({connection, onChange}: Props) => {
                 >
                     <FontAwesomeIcon icon={faFloppyDisk} />
                 </RoundIconButton>
-            </EditableDetails>
+            </div>
         );
     } else {
         editableDetails = (
-            <EditableDetails>
+            <div className="flex flex-row mb-2 text-black grow">
                 <div className="grow">
                     <p className="font-normal">{connection.displayName}</p>
                     <p className="italic">{connection.notes}</p>
@@ -74,7 +73,7 @@ export const ConnectedSocialItem = ({connection, onChange}: Props) => {
                 >
                     <FontAwesomeIcon icon={faPenToSquare} />
                 </RoundIconButton>
-            </EditableDetails>
+            </div>
         )
         ;
     }

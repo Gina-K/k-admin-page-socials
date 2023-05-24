@@ -1,9 +1,8 @@
 import {useConnectedSocials} from '@/hooks/useConnectedSocials';
 import {NotConnectedSocialsList} from '@/components/NotConnectedSocialsList';
-import {ConnectedSocialsWrapper} from '@/components/ConnectedSocialsWrapper';
-import {SocialCardsContainer} from '@/components/UI/SocialCardsContainer';
 import {Layout} from '@/components/Layout';
 import {useAvailableSocials} from '@/hooks/useAvailableSocials';
+import {ConnectedSocialsList} from '@/components/ConnectedSocialsList';
 
 const Home = () => {
     const {connectedSocials} = useConnectedSocials();
@@ -20,10 +19,10 @@ const Home = () => {
             >
                 Connect your Social Networks to import the content
             </h1>
-            <SocialCardsContainer>
-                {!!connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
+            <div className="flex flex-row flex-wrap justify-center font-sans">
+                {!!connectedSocials.length && <ConnectedSocialsList connectedSocials={connectedSocials} />}
                 <NotConnectedSocialsList notConnectedSocials={notConnectedSocials} />
-            </SocialCardsContainer>
+            </div>
         </Layout>
     );
 }

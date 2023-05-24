@@ -1,20 +1,28 @@
 import type {UsersConnectedSocial, UsersConnectedSocialsList} from '@/types/general';
-import {ConnectedSocialItem} from '@/components/ConnectedSocialItem';
+import {ConnectedSocialDetails} from '@/components/ConnectedSocialDetails';
 import {SocialCard} from '@/components/UI/SocialCard';
+import {useState} from 'react';
 
 type Props = {
-    connections: UsersConnectedSocialsList;
-    onChange: (connection: UsersConnectedSocial) => void;
+    connectedSocials: UsersConnectedSocialsList;
 };
 
-export const ConnectedSocialsList = ({connections, onChange}: Props) => {
+export const ConnectedSocialsList = ({connectedSocials}: Props) => {
+    const [connections, setConnections] = useState<UsersConnectedSocialsList>(connectedSocials);
+
+    const handleChange = (changedConnection: UsersConnectedSocial) => {
+        setConnections(connections.map((oldConnection) =>
+            (oldConnection.id === changedConnection.id ? changedConnection : oldConnection)
+        ));
+    }
+
     return (
         <>
             {connections.map((connection) => (
                 <SocialCard key={connection.id} socialName={connection.socialName}>
-                    <ConnectedSocialItem
+                    <ConnectedSocialDetails
                         connection={connection}
-                        onChange={onChange}
+                        onChange={handleChange}
                     />
                 </SocialCard>
             ))}

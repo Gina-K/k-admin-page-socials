@@ -1,42 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Socials section of Admin panel
 
-## Getting Started
+## How to run locally
 
-First, run the development server:
+1. Clone or download this repository.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Check if you have **Node.js** and **npm** installed on your computer (I used here Node v18.16.0 and npm 9.5.1):
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+   `node -v`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   `npm -v`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. If you dont't have one, install **Node.js** and **npm** for your OS from [https://nodejs.org/](https://nodejs.org/).
+   When you install Node.js, you automatically get npm installed.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+4. Go to the project folder and install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   `npm i`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+5. Run the fake api in the first terminal window:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   `npm run api`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-NOTES
-1. json-server: simple solution for mocking API. Should be moved to dev dependencies.
-2. fontawesome: handy icon library with plenty of free resources
+6. Run the app in the second terminal window:
+
+   `npm run dev`
+
+## Notes on used packages
+
+1. **json-server**: simple solution for mocking API locally.
+
+
+2. **FontAwesome**: handy icon library with plenty of free resources.

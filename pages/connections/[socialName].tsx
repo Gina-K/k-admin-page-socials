@@ -1,9 +1,15 @@
 import {getSocialNameFromAddressBar} from '@/utils';
+import {Layout} from '@/components/Layout';
 
 const ConnectionDetails = () => {
     const socialName = getSocialNameFromAddressBar();
+    const title = `${socialName} Content Manager`;
 
-    return <h2>{socialName} Content Manager</h2>
+    return (
+        <Layout pageTitle={title}>
+            <h2>{title}</h2>
+        </Layout>
+    );
 }
 
 export default ConnectionDetails;

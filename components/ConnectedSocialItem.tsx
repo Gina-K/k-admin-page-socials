@@ -10,11 +10,10 @@ import {RoundIconButton} from '@/components/UI/RoundIconButton';
 
 type Props = {
     connection: UsersConnectedSocial;
-    onChangeName: (connection: UsersConnectedSocial) => void;
-    onChangeNotes: (connection: UsersConnectedSocial) => void;
+    onChange: (connection: UsersConnectedSocial) => void;
 }
 
-export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: Props) => {
+export const ConnectedSocialItem = ({connection, onChange}: Props) => {
     const [isEditing, setIsEditing] = useState<boolean>(false);
 
     const handleSave = () => {
@@ -34,7 +33,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                         className="appearance-none border rounded w-full py-1 px-1 font-normal leading-none
                                    focus:outline-none focus:shadow-outline focus:border-indigo-500"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                            onChangeName({
+                            onChange({
                                 ...connection,
                                 displayName: e.target.value
                             });
@@ -47,7 +46,7 @@ export const ConnectedSocialItem = ({connection, onChangeName, onChangeNotes}: P
                         className="appearance-none border rounded w-full py-1 px-1 italic leading-none
                                    focus:outline-none focus:shadow-outline focus:border-indigo-500"
                         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
-                            onChangeNotes({
+                            onChange({
                                 ...connection,
                                 notes: e.target.value
                             });

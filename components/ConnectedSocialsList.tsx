@@ -4,19 +4,17 @@ import {SocialCard} from '@/components/UI/SocialCard';
 
 type Props = {
     connections: UsersConnectedSocialsList;
-    onChangeName: (connection: UsersConnectedSocial) => void;
-    onChangeNotes: (connection: UsersConnectedSocial) => void;
+    onChange: (connection: UsersConnectedSocial) => void;
 };
 
-export const ConnectedSocialsList = ({connections, onChangeName, onChangeNotes}: Props) => {
+export const ConnectedSocialsList = ({connections, onChange}: Props) => {
     return (
         <>
             {connections.map((connection) => (
                 <SocialCard key={connection.id} socialName={connection.socialName}>
                     <ConnectedSocialItem
                         connection={connection}
-                        onChangeName={onChangeName}
-                        onChangeNotes={onChangeNotes}
+                        onChange={onChange}
                     />
                 </SocialCard>
             ))}

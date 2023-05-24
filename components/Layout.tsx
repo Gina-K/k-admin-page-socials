@@ -19,11 +19,11 @@ export const Layout = ({children, pageTitle}: Props) => {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
 
-            <header className="fixed top-0 z-50 w-full h-14 bg-gray-300 border-b border-gray-200"></header>
+            <header className="fixed top-0 z-50 w-full h-14 bg-white shadow-sm border-b-2 border-b-teal-600/80"></header>
 
             <main className="h-screen pl-64 pt-14 bg-gray-50">{children}</main>
 
-            <aside className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 bg-gray-300 border-r border-gray-200"></aside>
+            <aside className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 bg-teal-600/80 shadow-md"></aside>
         </div>
     );
 }

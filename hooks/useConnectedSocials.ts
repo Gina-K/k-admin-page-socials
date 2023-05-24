@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-import {BASE_URL} from '@/pages/constants';
+import {BASE_URL} from '@/constants';
 import type {UsersConnectedSocial} from '@/types/general';
 
 export const useConnectedSocials = (): { connectedSocials: UsersConnectedSocial[] } => {

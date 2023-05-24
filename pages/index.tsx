@@ -3,9 +3,14 @@ import {NotConnectedSocialsList} from '@/components/NotConnectedSocialsList';
 import {ConnectedSocialsWrapper} from '@/components/ConnectedSocialsWrapper';
 import {SocialCardsContainer} from '@/components/UI/SocialCardsContainer';
 import {Layout} from '@/components/Layout';
+import {AVAILABLE_SOCIALS} from '@/constants';
 
 const Home = () => {
     const {connectedSocials} = useConnectedSocials();
+
+    const notConnectedSocials = AVAILABLE_SOCIALS.filter((available) => {
+        return !connectedSocials.some((connected) => (available.id === connected.id));
+    });
 
     return (
         <Layout pageTitle="Social Network Connections">
@@ -16,7 +21,7 @@ const Home = () => {
             </h1>
             <SocialCardsContainer>
                 {connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
-                <NotConnectedSocialsList />
+                <NotConnectedSocialsList notConnectedSocials={notConnectedSocials} />
             </SocialCardsContainer>
         </Layout>
     );

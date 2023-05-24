@@ -16,5 +16,4 @@ export interface AvailableSocialConnectionsList extends Array<AvailableSocialCon
 export interface AvailableSocialConnection {
     id: string;
     name: string;
-    isConnected: boolean;
 }

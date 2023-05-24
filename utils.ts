@@ -1,6 +1,7 @@
-import {BASE_URL} from '@/pages/constants';
+import {BASE_URL} from '@/constants';
+import type {UsersConnectedSocial} from '@/types/general';
 
-export const updateSocialData = (connection) => {
+export const updateSocialData = (connection: UsersConnectedSocial) => {
     const updateUrl = `${BASE_URL}/socials/${connection.id}`;
 
     fetch(updateUrl, {

@@ -1,11 +1,19 @@
-import {AVAILABLE_SOCIALS} from '@/pages/constants';
+import {AVAILABLE_SOCIALS} from '@/constants';
 import {SocialCard} from '@/components/UI/SocialCard';
+import type {AvailableSocialConnectionsList} from '@/types/general';
 
-export const NotConnectedSocialsList = () => {
+type Props = {
+    notConnectedSocials: AvailableSocialConnectionsList;
+}
+
+export const NotConnectedSocialsList = ({notConnectedSocials}: Props) => {
     return (
         <>
-            {AVAILABLE_SOCIALS.map((social) => (social.isConnected ||
-                <SocialCard key={social.id} socialName={social.name} />))}
+            {notConnectedSocials.map((social) =>
+                (
+                    <SocialCard key={social.id} socialName={social.name} />
+                )
+            )}
         </>
     );
 }

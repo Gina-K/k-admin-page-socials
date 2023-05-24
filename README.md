@@ -36,3 +36,9 @@
 
 
 2. **FontAwesome**: handy icon library with plenty of free resources.
+
+## Bonus 😄: design scribbles
+![connect-page](https://github.com/Gina-K/k-admin-page-socials/assets/51078861/a0ac2c9b-da39-4a6e-86e3-a666781c379a)
+![social-card](https://github.com/Gina-K/k-admin-page-socials/assets/51078861/3cd904a0-32bf-4a97-bec9-f66067b4c39a)
+
+

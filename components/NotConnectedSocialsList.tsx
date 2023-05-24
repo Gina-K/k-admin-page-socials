@@ -1,4 +1,3 @@
-import {AVAILABLE_SOCIALS} from '@/constants';
 import {SocialCard} from '@/components/UI/SocialCard';
 import type {AvailableSocialConnectionsList} from '@/types/general';
 

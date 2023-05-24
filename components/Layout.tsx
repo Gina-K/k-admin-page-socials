@@ -11,7 +11,6 @@ export const Layout = ({children, pageTitle}: Props) => {
         <div>
             <Head>
                 <title>{pageTitle}</title>
-                <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
                     content="Take home assignment. Socials cection of Admin panel"

@@ -21,7 +21,7 @@ const Home = () => {
                 Connect your Social Networks to import the content
             </h1>
             <SocialCardsContainer>
-                {connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
+                {!!connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
                 <NotConnectedSocialsList notConnectedSocials={notConnectedSocials} />
             </SocialCardsContainer>
         </Layout>

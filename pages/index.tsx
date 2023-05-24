@@ -9,7 +9,11 @@ const Home = () => {
 
     return (
         <Layout pageTitle="Social Network Connections">
-            <h2>Social Network Connections</h2>
+            <h1
+                className="text-center text-2xl font-light text-gray-600 tracking-wide m-2"
+            >
+                Connect your Social Networks to import the content
+            </h1>
             <SocialCardsContainer>
                 {connectedSocials.length && <ConnectedSocialsWrapper connectedSocials={connectedSocials} />}
                 <NotConnectedSocialsList />

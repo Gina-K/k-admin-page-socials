@@ -7,7 +7,11 @@ const ConnectionDetails = () => {
 
     return (
         <Layout pageTitle={title}>
-            <h2>{title}</h2>
+            <h1
+                className="text-center text-2xl font-light text-gray-600 tracking-wide m-2"
+            >
+                {`Manage and share your ${socialName} content`}
+            </h1>
         </Layout>
     );
 }

@@ -3,12 +3,13 @@ import {NotConnectedSocialsList} from '@/components/NotConnectedSocialsList';
 import {ConnectedSocialsWrapper} from '@/components/ConnectedSocialsWrapper';
 import {SocialCardsContainer} from '@/components/UI/SocialCardsContainer';
 import {Layout} from '@/components/Layout';
-import {AVAILABLE_SOCIALS} from '@/constants';
+import {useAvailableSocials} from '@/hooks/useAvailableSocials';
 
 const Home = () => {
     const {connectedSocials} = useConnectedSocials();
+    const {availableSocials} = useAvailableSocials();
 
-    const notConnectedSocials = AVAILABLE_SOCIALS.filter((available) => {
+    const notConnectedSocials = availableSocials.filter((available) => {
         return !connectedSocials.some((connected) => (available.id === connected.id));
     });
 

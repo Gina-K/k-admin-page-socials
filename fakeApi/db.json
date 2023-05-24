@@ -20,5 +20,23 @@
       "displayName": "TheMeatball on Dribble",
       "notes": "The main network"
     }
+  ],
+  "available": [
+    {
+      "id": "1",
+      "name": "Instagram"
+    },
+    {
+      "id": "2",
+      "name": "YouTube"
+    },
+    {
+      "id": "3",
+      "name": "OnlyFans"
+    },
+    {
+      "id": "4",
+      "name": "Dribble"
+    }
   ]
 }
